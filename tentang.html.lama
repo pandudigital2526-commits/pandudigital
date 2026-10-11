@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Pandu Digital</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+
+
+<body>
+  
+  <header>
+    
+    <nav class="navbar">
+      
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Logo Pandu Digital" class="logo">
+        <h2>Pandu Digital</h2>
+      </div>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="kegiatan.html">Kegiatan</a></li>
+      </ul>
+      
+      <button id="darkModeBtn">🌙</button>
+      
+      <script src="js/script.js"></script>
+      
+      </div>
+      
+    </nav>
+    
+  </header>
+  
+  <main>
+    <!-- Banner -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Tentang Pandu Digital</h1>
+        <p>Mengenal lebih dekat ekstrakurikuler Pandu Digital.</p>
+      </div>
+    </section>
+    
+    <!-- Sejarah -->
+    <section class="tentang">
+      <div class="container">
+        <h2>Sejarah Pandu Digital</h2>
+        <p>
+          Pandu Digital merupakan ekstrakurikuler yang menjadi wadah bagi siswa
+          untuk mengembangkan kemampuan di bidang teknologi digital. Anggota
+          belajar bersama mengenai pemrograman, desain grafis, fotografi,
+          videografi, hingga pembuatan website serta berbagai keterampilan
+          digital lainnya.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Visi Misi -->
+    <section class="visi-misi">
+      <div class="container">
+        
+        <div class="card">
+          <h2>Visi</h2>
+          <p>
+            Menjadi ekstrakurikuler yang kreatif, inovatif, dan mampu
+            menghasilkan karya digital yang bermanfaat.
+          </p>
+        </div>
+        
+        <div class="card">
+          <h2>Misi</h2>
+          
+          <ul>
+            <li>Meningkatkan kemampuan teknologi siswa.</li>
+            <li>Mengembangkan kreativitas.</li>
+            <li>Melatih kerja sama tim.</li>
+            <li>Menghasilkan karya digital berkualitas.</li>
+          </ul>
+          
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Tujuan -->
+    <section class="tujuan">
+      <div class="container">
+        
+        <h2>Tujuan</h2>
+        
+        <div class="tujuan-container">
+          
+          <div class="card">
+            <h3>💻 Teknologi</h3>
+            <p>Mengembangkan kemampuan di bidang teknologi digital.</p>
+          </div>
+          
+          <div class="card">
+            <h3>🎨 Kreativitas</h3>
+            <p>Menumbuhkan ide-ide kreatif melalui berbagai proyek.</p>
+          </div>
+          
+          <div class="card">
+            <h3>🤝 Kolaborasi</h3>
+            <p>Melatih kerja sama dan komunikasi antar anggota.</p>
+          </div>
+          
+          <div class="card">
+            <h3>🏆 Prestasi</h3>
+            <p>Mempersiapkan siswa mengikuti berbagai perlombaan.</p>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Pembina -->
+    <section class="pembina">
+      <div class="container">
+        
+        <h2>Pembina</h2>
+        
+        <div class="card">
+          <img src="images/pembina.jpg" alt="Pembina">
+          <h3>Nama Pembina</h3>
+          <p>Guru Pembina Pandu Digital</p>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+  
+  
+  <footer>
+    
+    <div class="footer-container">
+      
+      <h3>Pandu Digital</h3>
+      
+      <p>
+        Belajar • Berkarya • Berinovasi
+      </p>
+      
+      <p>
+        © 2026 Pandu Digital. All Rights Reserved.
+      </p>
+      
+    </div>
+    
+  </footer>
+  
+</body>
+
+<div id="loading-screen">
+  <div class="loader-content">
+    
+    <img src="images/logo rusdi.jpg" alt="Logo Pandu" class="loader-logo">
+    
+    <h2>Pandu Digital</h2>
+    
+    <p id="loading-text">Memuat Website...</p>
+    
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+    
+    <span id="loading-percent">0%</span>
+    
+  </div>
+</div>
+
+
+</html>

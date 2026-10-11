@@ -1,0 +1,1657 @@
+/* ===================================================
+   1. RESET CSS
+=================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===================================================
+   2. ROOT (VARIABEL WARNA)
+=================================================== */
+
+:root {
+  
+  /* Warna Utama */
+  --cream: #F7F1E3;
+  --cream-dark: #EFE4D2;
+  --brown: #4A3B2F;
+  --gold: #D4AF37;
+  --red: #B22222;
+  --white: #FFFFFF;
+  
+  /* Tema Website */
+  --bg-color: var(--cream);
+  --section-color: var(--cream-dark);
+  --card-color: var(--white);
+  --text-color: var(--brown);
+  --header-color: #E8DCC8;
+  --footer-color: #B22222;
+  
+}
+
+/* ===================================================
+   3. BODY
+=================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  position: relative;
+  overflow-x: hidden;
+  
+  background: var(--bg-color);
+  color: var(--text-color);
+  
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  
+  transition: .3s;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  
+  background:
+    /* Garis diagonal kiri atas */
+    linear-gradient(135deg,
+      transparent 0%,
+      transparent 28%,
+      rgba(183, 28, 28, .07) 28%,
+      rgba(183, 28, 28, .07) 29%,
+      transparent 29%),
+    
+    /* Garis diagonal kanan bawah */
+    linear-gradient(-45deg,
+      transparent 0%,
+      transparent 82%,
+      rgba(255, 152, 0, .07) 82%,
+      rgba(255, 152, 0, .07) 83%,
+      transparent 83%),
+    
+    /* Bulatan blur merah */
+    radial-gradient(circle at 12% 15%,
+      rgba(183, 28, 28, .10) 0,
+      transparent 220px),
+    
+    /* Bulatan blur oranye */
+    radial-gradient(circle at 88% 82%,
+      rgba(255, 152, 0, .10) 0,
+      transparent 220px);
+      
+      
+}
+body::after {
+  content: "";
+  
+  position: fixed;
+  
+  width: 180px;
+  height: 180px;
+  
+  right: 40px;
+  top: 140px;
+  
+  border: 2px solid rgba(183, 28, 28, .08);
+  
+  transform: rotate(18deg);
+  
+  border-radius: 18px;
+  
+  pointer-events: none;
+  
+  z-index: -1;
+}
+
+
+/* ===================================================
+   4. CONTAINER
+=================================================== */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===================================================
+   HEADER & NAVBAR BARU
+=================================================== */
+
+header{
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: linear-gradient(
+        90deg,
+        #7d0000,
+        #b71c1c,
+        #d32f2f,
+        #b71c1c,
+        #7d0000
+    );
+
+    border-bottom: 2px solid #ffb300;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+
+}
+
+.navbar{
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 15px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: transparent;
+
+}
+
+.logo{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.logo img{
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+}
+
+.logo h2 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.menu{
+
+    display: flex;
+
+    list-style: none;
+
+    gap: 35px;
+
+}
+
+.menu li{
+
+    list-style: none;
+
+}
+
+.menu a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+
+.menu a::after{
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #ffb300;
+
+    transition: .3s;
+
+}
+
+.menu a:hover{
+
+    color: #ffb300;
+
+}
+
+.menu a:hover::after{
+
+    width: 100%;
+
+}
+
+#darkModeBtn{
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+#darkModeBtn:hover{
+
+    background: #ffb300;
+
+    color: #111;
+
+    transform: rotate(180deg);
+
+}
+/* ---------- Logo ---------- */
+
+.logo {
+  
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+}
+
+.logo img {
+  
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin: 20px;
+  
+}
+
+.logo h2 {
+  
+  font-size: 28px;
+  color: var(--brown);
+  
+}
+
+/* ---------- Menu ---------- */
+
+.menu {
+  
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  
+}
+
+.menu a {
+  
+  text-decoration: none;
+  color: var(--brown);
+  font-weight: bold;
+  transition: .3s;
+  
+}
+
+.menu a:hover {
+  
+  color: var(--gold);
+  
+}
+
+/* ---------- Tombol body.dark-mode*/
+header{
+
+    background: linear-gradient(
+        90deg,
+        #1b1b1b,
+        #252525,
+        #303030,
+        #252525,
+        #1b1b1b
+    );
+
+    border-bottom: 2px solid #ffb300;
+
+}
+
+body.dark-mode .menu a{
+
+    color: #ffffff;
+
+}
+
+body.dark-mode #darkModeBtn{
+
+    background: #333;
+
+    color: white;
+
+} Mode ---------- */
+
+#darkModeBtn {
+  
+  padding: 10px 16px;
+  
+  border: none;
+  
+  border-radius: 10px;
+  
+  background: var(--gold);
+  
+  color: white;
+  
+  cursor: pointer;
+  
+  transition: .3s;
+  
+}
+
+#darkModeBtn:hover {
+  
+  background: var(--red);
+  
+}
+
+/* ===================================================
+   7. HERO
+=================================================== */
+
+.hero {
+  padding: 80px 0;
+}
+
+.hero-content {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  
+}
+
+.hero-text {
+  
+  flex: 1;
+  
+}
+
+.hero-text h4 {
+  
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  
+}
+
+.hero-text h1 {
+  
+  font-size: 56px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  
+}
+
+.hero-text span {
+  
+  color: var(--red);
+  
+}
+
+.hero-text p {
+  
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: var(--text-color);
+  
+}
+
+.hero-button {
+  
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+}
+
+.hero-image {
+  
+  flex: 1;
+  text-align: center;
+  
+}
+
+.hero-image img {
+  
+  width: 100%;
+  max-width: 420px;
+  
+}
+
+/* ===================================================
+   8. BUTTON
+=================================================== */
+
+.btn {
+  
+  display: inline-block;
+  
+  padding: 14px 30px;
+  
+  background: var(--red);
+  
+  color: white;
+  
+  text-decoration: none;
+  
+  border-radius: 50px;
+  
+  font-weight: bold;
+  
+  transition: .3s;
+  
+}
+
+.btn:hover {
+  
+  background: var(--brown);
+  
+}
+
+.btn-outline {
+  
+  display: inline-block;
+  
+  padding: 14px 30px;
+  
+  border: 2px solid var(--red);
+  
+  color: var(--red);
+  
+  border-radius: 50px;
+  
+  text-decoration: none;
+  
+  font-weight: bold;
+  
+  transition: .3s;
+  
+}
+
+.btn-outline:hover {
+  
+  background: var(--red);
+  
+  color: white;
+  
+}
+
+/* ===================================================
+   9. TENTANG
+=================================================== */
+
+.tentang {
+  
+  padding: 80px 0;
+  
+}
+
+.tentang h2 {
+  
+  text-align: center;
+  
+  font-size: 36px;
+  
+  color: var(--text-color);
+  
+  margin-bottom: 25px;
+  
+}
+
+.tentang p {
+  
+  max-width: 850px;
+  
+  margin: auto;
+  
+  text-align: center;
+  
+  line-height: 1.9;
+  
+  font-size: 18px;
+  
+}
+
+.tentang .btn {
+  
+  display: block;
+  
+  width: 220px;
+  
+  margin: 40px auto 0;
+  
+  text-align: center;
+  
+}
+
+/* ===================================================
+   10. KEGIATAN
+=================================================== */
+
+.kegiatan {
+  padding: 80px 0;
+  background: var(--section-color);
+}
+
+.kegiatan h2 {
+  text-align: center;
+  font-size: 36px;
+  color: var(--text-color);
+  margin-bottom: 50px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--card-color);
+  border-radius: 18px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ===================================================
+   11. MANFAAT
+=================================================== */
+
+.manfaat {
+  padding: 80px 0;
+}
+
+.manfaat h2 {
+  text-align: center;
+  font-size: 36px;
+  color: var(--text-color);
+  margin-bottom: 50px;
+}
+
+.manfaat-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.manfaat-card {
+  background: var(--card-color);
+  border-radius: 18px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+  transition: .3s;
+}
+
+.manfaat-card:hover {
+  transform: translateY(-8px);
+}
+
+.manfaat-card h3 {
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.manfaat-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* ===================================================
+   12. GALERI
+=================================================== */
+
+.galeri {
+  padding: 80px 0;
+  background: var(--section-color);
+}
+
+.galeri h2 {
+  text-align: center;
+  font-size: 36px;
+  color: var(--text-color);
+  margin-bottom: 50px;
+}
+
+.galeri-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.galeri-container img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.galeri-container img:hover {
+  transform: scale(1.05);
+}
+
+/* ===================================================
+   13. FOOTER
+=================================================== */
+
+footer{
+    background: linear-gradient(
+        135deg,
+        #5B0000 0%,
+        #7A0C0C 25%,
+        #A51C1C 55%,
+        #D84040 100%
+    );
+
+    color: white;
+    padding: 55px 0;
+    text-align: center;
+
+    /* Garis atas */
+    border-top: 2px solid rgba(255,255,255,0.15);
+
+    /* Bayangan */
+    box-shadow: 0 -8px 25px rgba(0,0,0,.25);
+
+    transition: .4s;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-container h3 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.footer-container p {
+  margin: 10px 0;
+  color: #f0f0f0;
+}
+
+.footer-container a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  color: white;
+}
+
+/* ===================================================
+   14. RESPONSIVE
+=================================================== */
+
+@media (max-width:768px) {
+  
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-text h1 {
+    font-size: 42px;
+  }
+  
+  .hero-button {
+    justify-content: center;
+  }
+  
+  .hero-image img {
+    max-width: 300px;
+  }
+  
+  .card-container,
+  .manfaat-container,
+  .galeri-container {
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+/* ===================================================
+   15. DARK MODE
+=================================================== */
+
+body.dark-mode {
+  
+  --bg-color: #181818;
+  --section-color: #242424;
+  --card-color: #2F2F2F;
+  --text-color: #F5F5F5;
+  
+  --header-color: #1F1F1F;
+  --footer-color: #111111;
+  
+}
+
+/* Navbar */
+
+body.dark-mode .menu a {
+  color: #f5f5f5;
+}
+
+body.dark-mode .logo h2 {
+  color: #ffffff;
+}
+
+/* Card di Beranda saat Dark Mode */
+
+body.dark-mode .card,
+body.dark-mode .manfaat-card {
+  
+  background: #2b2b2b;
+  color: #ffffff;
+  border: 1px solid #3f3f3f;
+  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .35);
+  
+}
+
+body.dark-mode .manfaat-card h3 {
+  color: #fff;
+}
+
+body.dark-mode .manfaat-card p {
+  color: #cfcfcf;
+}
+
+
+body.dark-mode .card p,
+body.dark-mode .manfaat-card p {
+  
+  color: #d6d6d6;
+  
+}
+
+/* Tombol */
+
+body.dark-mode .btn {
+  
+  background: #B22222;
+  
+}
+
+body.dark-mode .btn:hover {
+  
+  background: #D84040;
+  
+}
+
+/* Animasi */
+
+body,
+header,
+section,
+footer,
+.card,
+.manfaat-card,
+button,
+.menu a {
+  
+  transition: .35s;
+  
+}
+
+/* Judul */
+
+body.dark-mode .card h3,
+body.dark-mode .manfaat-card h3 {
+  
+  color: #ffffff;
+  
+}
+
+/* Isi */
+
+body.dark-mode .card p,
+body.dark-mode .manfaat-card p {
+  
+  color: #d0d0d0;
+  
+}
+
+/* ===========================
+   DARK MODE LOADING SCREEN
+=========================== */
+
+body.dark-mode #loading-screen{
+    background: linear-gradient(
+        135deg,
+        #181818,
+        #232323,
+        #2f2f2f
+    );
+}
+
+body.dark-mode .loader-content h2{
+    color: #ffffff;
+}
+
+body.dark-mode .loader-content p{
+    color: #dddddd;
+}
+
+body.dark-mode .progress-bar{
+    background: #444;
+}
+
+body.dark-mode #loading-percent{
+    color: #ffb347;
+}
+
+/* ===========================
+   HAMBURGER DARK MODE
+=========================== */
+
+body.dark-mode .menu {
+  background: #222;
+}
+
+body.dark-mode .hamburger {
+  color: white;
+}
+
+
+
+body.dark-mode header{
+
+    background: linear-gradient(
+        90deg,
+        #1b1b1b,
+        #252525,
+        #303030,
+        #252525,
+        #1b1b1b
+    );
+
+    border-bottom: 2px solid #ffb300;
+
+}
+
+body.dark-mode .menu a{
+
+    color: #ffffff;
+
+}
+
+body.dark-mode #darkModeBtn{
+
+    background: #333;
+
+    color: white;
+
+}
+
+body.dark-mode .menu,
+body.dark-mode .menu li,
+body.dark-mode .menu a {
+  background: transparent;
+  color: #fff;
+}
+
+/* Header normal (Mode Terang) */
+header{
+    background: linear-gradient(
+        90deg,
+        #8b0000,
+        #c62828,
+        #d32f2f,
+        #c62828,
+        #8b0000
+    );
+    border-bottom: 2px solid #ffb300;
+}
+
+/* Header Dark Mode */
+body.dark-mode header{
+    background: linear-gradient(
+        90deg,
+        #1b1b1b,
+        #252525,
+        #303030,
+        #252525,
+        #1b1b1b
+    );
+}
+
+
+
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+#loading-screen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity .8s ease, visibility .8s ease;
+}
+
+.loader-content{
+    text-align: center;
+}
+
+.loader-logo{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.loader-content h2{
+    color: var(--brown);
+    margin-bottom: 10px;
+}
+
+.loader-content p{
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.spinner{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border: 5px solid #ddd;
+    border-top: 5px solid #c62828;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#loading-screen.hide{
+    opacity: 0;
+    visibility: hidden;
+}
+.progress-bar {
+  width: 260px;
+  height: 8px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px auto 0;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #c62828, #ff9800);
+  animation: loading 3s forwards;
+}
+
+@keyframes loading {
+  
+  0% {
+    width: 0%;
+  }
+  
+  100% {
+    width: 100%;
+  }
+  
+}
+
+.loader-logo {
+  width: 100px;
+  margin-bottom: 20px;
+  animation: logoPop 1s ease;
+}
+
+@keyframes logoPop {
+  
+  0% {
+    transform: scale(.5);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+}
+#loading-screen{
+    background: linear-gradient(
+        135deg,
+        #F7F1E3,
+        #EFE4D2,
+        #FFFFFF
+    );
+}
+
+#loading-percent{
+    display:block;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+    color:#c62828;
+}
+
+.loader-logo{
+    width:110px;
+    animation: logoAnimation 1.5s ease;
+}
+
+@keyframes logoAnimation{
+
+    0%{
+        opacity:0;
+        transform:scale(.4) rotate(-15deg);
+    }
+
+    60%{
+        transform:scale(1.15) rotate(8deg);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1) rotate(0deg);
+    }
+
+}
+
+/* ==========================
+   ICON KEGIATAN
+========================== */
+
+.activity-icon {
+  font-size: 60px;
+  color: #b71c1c;
+  margin-bottom: 20px;
+  transition: .3s;
+}
+
+.card:hover .activity-icon {
+  transform: scale(1.15) rotate(8deg);
+  color: #ff9800;
+}
+
+
+
+/* ==========================
+   ICON MANFAAT
+========================== */
+
+.benefit-icon {
+  width: 85px;
+  height: 85px;
+  background: #b71c1c;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  
+  /* Posisi */
+  margin: 25px auto 20px;
+  
+  /* Animasi */
+  transition: all .3s ease;
+}
+
+/* Card */
+.manfaat-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: .3s;
+}
+
+/* Hover Card */
+.manfaat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+}
+
+/* Hover Icon */
+.manfaat-card:hover .benefit-icon {
+  background: #ff9800;
+  transform: scale(1.1);
+}
+
+/* Ikon berubah menjadi hitam */
+.manfaat-card:hover .benefit-icon i {
+  color: #111;
+}
+
+/* ==========================================
+   HALAMAN TENTANG
+========================================== */
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  
+  padding: 120px 10%;
+  
+  background:
+    radial-gradient(circle at top right,
+      rgba(255, 193, 7, .18),
+      transparent 35%),
+    
+    linear-gradient(135deg,
+      #7f1111 0%,
+      #a81515 40%,
+      #b71c1c 100%);
+  
+  color: #fff;
+}
+
+.about-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    repeating-linear-gradient(
+    -45deg,
+
+    transparent 0px,
+
+    transparent 55px,
+
+    rgba(255,255,255,.04) 55px,
+
+    rgba(255,255,255,.04) 70px
+
+    );
+
+    pointer-events:none;
+
+}
+
+
+.about-hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  font-size: 48px;
+  margin: 15px 0;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.section-tag {
+  background: #fff;
+  color: #b71c1c;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  
+  width: 320px;
+  
+  border-radius: 50%;
+  
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, .35),
+    0 0 40px rgba(255, 193, 7, .25);
+  
+}
+
+/* ====================== */
+
+.about-section {
+  padding: 70px 10%;
+}
+
+.about-section h2 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 40px;
+  color: #b71c1c;
+}
+
+.about-grid,
+.tujuan-grid,
+.struktur-grid,
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.about-card {
+  
+  background: #fff;
+  
+  border-radius: 20px;
+  
+  padding: 30px;
+  
+  text-align: center;
+  
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+  
+  transition: .35s;
+  
+}
+
+.about-card:hover {
+  
+  transform: translateY(-10px);
+  
+  box-shadow: 0 18px 35px rgba(0, 0, 0, .18);
+  
+}
+
+.about-card i {
+  
+  width: 75px;
+  
+  height: 75px;
+  
+  background: #b71c1c;
+  
+  color: #fff;
+  
+  border-radius: 50%;
+  
+  display: flex;
+  
+  justify-content: center;
+  
+  align-items: center;
+  
+  font-size: 30px;
+  
+  margin: 0 auto 20px;
+  
+}
+
+.about-card h3 {
+  
+  margin-bottom: 15px;
+  
+}
+
+.about-card ul {
+  
+  text-align: left;
+  
+  line-height: 2;
+  
+}
+
+/* ====================== */
+
+.pembina h2 {
+  text-align: center;
+  color: #ff9800;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}.pembina-card {
+  
+  max-width: 350px;
+  
+  margin: auto;
+  
+  text-align: center;
+  
+  background: #fff;
+  
+  padding: 35px;
+  
+  border-radius: 20px;
+  
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+  
+}
+
+.pembina-card img {
+  
+  width: 180px;
+  
+  height: 180px;
+  
+  object-fit: cover;
+  
+  border-radius: 50%;
+  
+  margin-bottom: 20px;
+  
+  border: 6px solid #b71c1c;
+  
+}
+
+.pembina-card span {
+  
+  color: #ff9800;
+  
+  font-weight: bold;
+  
+}
+
+.pembina-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pembina-card {
+  width: 300px;
+}
+
+.pembina h2 {
+  color: #b71c1c;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+body.dark-mode .pembina h2 {
+  color: #ffb300;
+}
+
+/* ====================== */
+
+.gallery-grid img {
+  
+  width: 100%;
+  
+  height: 230px;
+  
+  object-fit: cover;
+  
+  border-radius: 18px;
+  
+  transition: .3s;
+  
+}
+
+.gallery-grid img:hover {
+  
+  transform: scale(1.05);
+  
+}
+
+/* ====================== */
+
+body.dark-mode .about-card,
+body.dark-mode .pembina-card {
+  
+  background: #1f1f1f;
+  
+  color: #fff;
+  
+}
+
+body.dark-mode .about-section h2 {
+  
+  color: #ff9800;
+  
+}
+
+body.dark-mode .section-tag {
+  
+  background: #333;
+  
+  color: #ff9800;
+  
+}
+
+/* ====================== */
+
+@media(max-width:768px) {
+  
+  .about-hero-content {
+    
+    flex-direction: column-reverse;
+    
+  }
+  
+  .about-text h1 {
+    
+    font-size: 38px;
+    
+    text-align: center;
+    
+  }
+  
+  .about-text p {
+    
+    text-align: center;
+    
+  }
+  
+  .about-image img {
+    
+    width: 200px;
+    
+  }
+  
+}
+
+/* Saat card dipilih */
+
+.about-card.active i,
+.kegiatan-card.active i,
+.manfaat-card.active i {
+  
+  background: #ffc107;
+  color: white !important;
+  
+}
+
+/* Dark mode */
+
+body.dark-mode .about-card.active i,
+body.dark-mode .kegiatan-card.active i,
+body.dark-mode .manfaat-card.active i {
+  
+  background: #ffc107;
+  color: #222;
+  
+}
+
+body:not(.dark-mode) .about-card.active i,
+body:not(.dark-mode) .kegiatan-card.active i,
+body:not(.dark-mode) .manfaat-card.active i {
+  background: #ffc107;
+  color: #222;
+}
+
+/* Jarak tombol Lihat Semua */
+
+.kegiatan .btn {
+  margin-top: 30px;
+}
+
+/* ==========================
+   PAKSA WARNA MENU TERANG
+========================== */
+
+header .menu a {
+  color: #ffffff !important;
+}
+
+header .logo h2 {
+  color: #ffffff !important;
+}
+
+header .menu a:hover {
+  color: #ffd54f !important;
+}
+
+/* ===========================
+   MENU ACTIVE
+=========================== */
+
+.menu a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.menu a.active {
+  color: #fff;
+}
+
+.menu a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: #ffb300;
+  border-radius: 10px;
+}
+
+.menu a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: #ffb300;
+  border-radius: 10px;
+}
+
+/* ==========================
+   CREATED BY
+========================== */
+
+.creator {
+  margin-top: 20px;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #d6d6d6;
+  letter-spacing: 0.5px;
+}
+
+.creator span {
+  color: #ffcc33;
+  font-weight: 600;
+}
+
+/*dark mode button vektor*/
+#darkModeBtn i {
+  font-size: 20px;
+  transition: .4s;
+}
+
+#darkModeBtn:hover i {
+  transform: rotate(180deg);
+}
+/*+3+$(#(#(#(#*/
+

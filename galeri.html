@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri | Pandu Digital</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/Sakanade.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <img src="img/logo.jpg"
+                 alt="Logo Pandu Digital">
+
+            <h2>Pandu Digital</h2>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    Beranda
+                </a>
+            </li>
+
+            <li>
+                <a href="tentang.html">
+                    Tentang
+                </a>
+            </li>
+
+            <li>
+                <a href="kegiatan.html">
+                    Kegiatan
+                </a>
+            </li>
+
+            <li>
+                <a href="galeri.html" class="active">
+                    Galeri
+                </a>
+            </li>
+
+            <li>
+                <a href="kontak.html">
+                    Kontak
+                </a>
+            </li>
+
+        </ul>
+
+        <button id="darkModeBtn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+    </nav>
+
+</header>
+
+<main>
+
+<!-- ==========================
+     HERO GALERI
+========================== -->
+
+<section class="about-hero">
+
+    <div class="container about-hero-content">
+
+        <div class="about-text">
+
+            <span class="section-tag">
+                GALERI
+            </span>
+
+            <h1>
+
+                Galeri
+                <span>Pandu Digital</span>
+
+            </h1>
+
+            <p>
+
+                Dokumentasi berbagai kegiatan,
+                pelatihan,
+                lomba,
+                seminar,
+                workshop,
+                serta berbagai momen terbaik
+                yang pernah dilakukan oleh
+                Pandu Digital.
+
+            </p>
+
+            <div class="hero-button">
+
+                <a href="#gallery"
+                   class="btn">
+
+                    Jelajahi Galeri
+
+                </a>
+
+                <a href="kegiatan.html"
+                   class="btn-outline">
+
+                    Lihat Kegiatan
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="about-image">
+
+            <img src="img/logo.jpg"
+                 alt="Galeri Pandu Digital">
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================
+     GALERI FOTO
+========================== -->
+
+<section class="galeri" id="gallery">
+
+    <div class="container">
+
+        <h2>Galeri Kegiatan</h2>
+
+        <p class="gallery-desc">
+
+            Berikut dokumentasi kegiatan,
+            pelatihan, lomba,
+            serta berbagai momen terbaik
+            Pandu Digital.
+
+        </p>
+
+        <!-- FILTER -->
+
+        <div class="gallery-filter">
+
+            <button class="filter-btn active"
+                    data-filter="all">
+                Semua
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="kegiatan">
+                Kegiatan
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="workshop">
+                Latihan
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="lomba">
+                Lomba
+            </button>
+
+            <button class="filter-btn"
+                    data-filter="dokumentasi">
+                Dokumentasi
+            </button>
+
+        </div>
+
+        <!-- FOTO -->
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item"
+                 data-category="kegiatan">
+
+                <img src="img/fake.jpg"
+                     alt="Kegiatan">
+
+                <div class="gallery-overlay">
+
+                    <h3>Kegiatan</h3>
+
+                    <p>Belajar Bersama</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="workshop">
+
+                <img src="img/fake.jpg"
+                     alt="Workshop">
+
+                <div class="gallery-overlay">
+
+                    <h3>Latihan</h3>
+
+                    <p>Pelatihan Pandu Digital</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="lomba">
+
+                <img src="img/fake.jpg"
+                     alt="Lomba">
+
+                <div class="gallery-overlay">
+
+                    <h3>Lomba</h3>
+
+                    <p>Kompetisi Teknologi</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="dokumentasi">
+
+                <img src="img/fake.jpg"
+                     alt="Dokumentasi">
+
+                <div class="gallery-overlay">
+
+                    <h3>Dokumentasi</h3>
+
+                    <p>Momen Bersama</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="kegiatan">
+
+                <img src="img/fake.jpg"
+                     alt="Kegiatan">
+
+                <div class="gallery-overlay">
+
+                    <h3>Kegiatan</h3>
+
+                    <p>Praktik Bersama</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="workshop">
+
+                <img src="img/fake.jpg"
+                     alt="Workshop">
+
+                <div class="gallery-overlay">
+
+                    <h3>Latihan</h3>
+
+                    <p>Belajar Coding</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="lomba">
+
+                <img src="img/fake.jpg"
+                     alt="Lomba">
+
+                <div class="gallery-overlay">
+
+                    <h3>Lomba</h3>
+
+                    <p>Prestasi Anggota</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="dokumentasi">
+
+                <img src="img/fake.jpg"
+                     alt="Dokumentasi">
+
+                <div class="gallery-overlay">
+
+                    <h3>Dokumentasi</h3>
+
+                    <p>Kebersamaan Tim</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-item"
+                 data-category="kegiatan">
+
+                <img src="img/fake.jpg"
+                     alt="Kegiatan">
+
+                <div class="gallery-overlay">
+
+                    <h3>Kegiatan</h3>
+
+                    <p>Diskusi Kelompok</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     AJAKAN BERGABUNG
+========================== -->
+
+<section class="tentang">
+
+    <div class="container">
+
+        <h2>Abadikan Momen Bersama Kami</h2>
+
+        <p>
+            Setiap kegiatan merupakan pengalaman
+            berharga yang membangun kreativitas,
+            kerja sama, dan semangat belajar
+            seluruh anggota Pandu Digital.
+        </p>
+
+        <a href="kontak.html" class="btn">
+            Bergabung Sekarang
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     LIGHTBOX
+========================== -->
+
+<div id="lightbox" class="lightbox">
+
+    <span class="close-lightbox">
+        &times;
+    </span>
+
+    <img id="lightbox-img"
+         src=""
+         alt="Preview Galeri">
+
+</div>
+
+</main>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <h3>Pandu Digital</h3>
+
+        <p>
+            Belajar • Berkarya • Berinovasi
+        </p>
+
+        <p>
+            © 2026 Pandu Digital.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+    <p class="creator">
+
+        Created by
+
+        <span>
+            ANDI AHMAD FAQIH PAREWUSI
+        </span>
+
+    </p>
+
+</footer>
+
+<!-- ==========================
+     LOADING SCREEN
+========================== -->
+
+<div id="loading-screen">
+
+    <div class="loader-content">
+
+        <img src="img/AKUPANDU.jpg"
+             alt="Logo Pandu"
+             class="loader-logo">
+
+        <h2>Pandu Digital</h2>
+
+        <p id="loading-text">
+            Memuat Website...
+        </p>
+
+        <div class="progress-bar">
+
+            <div class="progress"></div>
+
+        </div>
+
+        <span id="loading-percent">
+            0%
+        </span>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/Sakanade.js"></script>
+</body>
+</html>
