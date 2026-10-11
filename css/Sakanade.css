@@ -1,0 +1,1408 @@
+/* ======================================================
+   SAKANADE MODE
+   Pandu Digital
+====================================================== */
+
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/* ===============================
+   Dunia Terbalik
+================================ */
+
+/* SAKANADE: PAGE SAJA */
+body.sakanade-mode main,
+body.sakanade-mode #page-content,
+body.sakanade-mode .page-content {
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
+/* Header & loading tetap normal */
+body.sakanade-mode header,
+body.sakanade-mode .navbar,
+body.sakanade-mode #loading-screen {
+    transform: none !important;
+}
+
+
+
+/* ===============================
+   Aura Cyan
+================================ */
+
+#sakanadeAura{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9998;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+    overflow:hidden;
+
+}
+
+/* Lingkaran utama */
+
+#sakanadeAura::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30%;
+
+    background:
+    radial-gradient(circle,
+        rgba(0,255,255,.35) 0%,
+        rgba(0,180,255,.22) 20%,
+        rgba(0,90,255,.12) 45%,
+        transparent 72%
+    );
+
+    animation:
+        auraRotate 12s linear infinite;
+
+    filter:blur(30px);
+
+}
+
+@keyframes auraRotate {
+    
+    from {
+        
+        transform: rotate(0deg) scale(1);
+        
+    }
+    
+    to {
+        
+        transform: rotate(360deg) scale(1.12);
+        
+    }
+    
+}
+
+body.dark-mode #sakanadeAura::before{
+
+    background:
+    radial-gradient(circle,
+
+        rgba(120,255,255,.16) 0%,
+
+        rgba(0,170,255,.14) 30%,
+
+        rgba(0,70,170,.12) 55%,
+
+        transparent 80%
+
+    );
+
+}
+
+/* Kabut Cyan */
+
+#sakanadeAura::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        rgba(100,220,255,.05),
+
+        rgba(0,180,255,.10),
+
+        rgba(30,80,180,.08)
+
+    );
+
+}
+
+/* Aktif */
+
+#sakanadeAura.active{
+
+    opacity:1;
+
+}
+
+
+/* ======================================================
+   WAVE RING
+====================================================== */
+
+.waveRing{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:120px;
+    height:120px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:2px solid rgba(120,240,255,.55);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,.6),
+        0 0 40px rgba(0,180,255,.4);
+
+    opacity:0;
+
+}
+
+/* ===============================
+   Ripple
+================================ */
+
+.waveRing.active{
+
+    animation:
+        sakanadeRipple 3s ease-out infinite;
+
+}
+
+@keyframes sakanadeRipple{
+
+    0%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(.2);
+
+        opacity:.9;
+
+    }
+
+    40%{
+
+        opacity:.55;
+
+    }
+
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(8);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ======================================================
+   SPACE RIPPLE
+====================================================== */
+
+.spaceRipple{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:40px;
+    height:40px;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    opacity:0;
+
+    background:
+
+    radial-gradient(circle,
+
+        rgba(120,255,255,.75),
+
+        rgba(0,220,255,.45),
+
+        rgba(0,160,255,.18),
+
+        transparent 75%
+
+    );
+
+    filter:blur(2px);
+
+}
+
+.spaceRipple.active{
+
+    animation:spaceRipple 3.2s ease-out forwards;
+
+}
+
+@keyframes spaceRipple{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.2);
+
+    }
+
+    30%{
+
+        opacity:.85;
+
+    }
+
+    60%{
+
+        opacity:.45;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(55);
+
+    }
+
+}
+
+/* ======================================================
+   SPACE REFRACTION
+====================================================== */
+
+@keyframes spaceRefraction{
+
+    0%{
+
+        transform:
+        perspective(1200px)
+        scale(1);
+
+        filter:
+        blur(0px);
+
+    }
+
+    20%{
+
+        transform:
+        perspective(1200px)
+        scale(1.01)
+        skew(.15deg,.15deg);
+
+        filter:
+        blur(.2px);
+
+    }
+
+    40%{
+
+        transform:
+        perspective(1200px)
+        scale(1.02)
+        skew(-.2deg,.2deg);
+
+        filter:
+        blur(.45px);
+
+    }
+
+    60%{
+
+        transform:
+        perspective(1200px)
+        scale(1.025)
+        skew(.2deg,-.15deg);
+
+        filter:
+        blur(.6px);
+
+    }
+
+    80%{
+
+        transform:
+        perspective(1200px)
+        scale(1.01);
+
+        filter:
+        blur(.2px);
+
+    }
+
+    100%{
+
+        transform:
+        perspective(1200px)
+        scale(1);
+
+        filter:
+        blur(0px);
+
+    }
+
+}
+
+.space-refraction{
+
+    animation:
+    spaceRefraction 3.5s ease;
+
+}
+
+/* ======================================================
+   CYAN FOG
+====================================================== */
+
+#sakanadeAura .fog {
+    
+    position: absolute;
+    
+    inset: 0;
+    
+    background:
+    
+        radial-gradient(circle at 30% 40%,
+            rgba(0, 255, 255, .12),
+            transparent 45%),
+        
+        radial-gradient(circle at 70% 60%,
+            rgba(80, 180, 255, .10),
+            transparent 55%),
+        
+        radial-gradient(circle at 50% 80%,
+            rgba(0, 180, 255, .08),
+            transparent 60%);
+    
+    mix-blend-mode: screen;
+    
+    filter: blur(35px);
+    
+    animation: fogMove 8s linear infinite;
+    
+}
+
+@keyframes fogMove {
+    
+    0% {
+        
+        transform: translateX(-2%) translateY(0);
+        
+    }
+    
+    50% {
+        
+        transform: translateX(2%) translateY(-2%);
+        
+    }
+    
+    100% {
+        
+        transform: translateX(-2%) translateY(0);
+        
+    }
+    
+}
+
+/* ======================================================
+   SHINJI PERFECT DROP
+====================================================== */
+
+#shinjiPortrait{
+
+    position:absolute;
+
+    left:50%;
+    top:-70%;
+
+    width:min(90vw,430px);
+
+    opacity:0;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+    filter:
+        drop-shadow(0 0 25px rgba(0,255,255,.45))
+        drop-shadow(0 0 70px rgba(0,180,255,.35));
+
+}
+
+#sakanadeOverlay.active #shinjiPortrait{
+
+    animation:shinjiDrop 4s ease forwards;
+
+}
+
+@keyframes shinjiDrop{
+
+    0%{
+
+        opacity:0;
+
+        top:-70%;
+
+        transform:
+            translateX(-50%)
+            
+            scale(.8);
+
+        filter:
+            blur(18px);
+
+    }
+
+    20%{
+
+        opacity:.6;
+
+        top:-35%;
+
+    }
+
+    45%{
+
+        opacity:1;
+
+        top:5%;
+
+        transform:
+            translateX(-50%)
+            
+            scale(1.5);
+
+        filter:
+            blur(0);
+
+    }
+
+    65%{
+
+        top:18%;
+
+        transform:
+            translateX(-50%)
+            
+            scale(2);
+
+    }
+
+    80%{
+
+        top:20%;
+
+        transform:
+            translateX(-50%)
+            
+            scale(2.5);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        top:35%;
+
+        transform:
+            translateX(-50%)
+            
+            scale(3);
+
+    }
+
+}
+
+/* ======================================================
+   PANDU DIGITAL LOADING SCREEN
+====================================================== */
+
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.98),
+            rgba(238,244,250,.98)
+        );
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+
+/* ======================================================
+   NORMAL PANDU DIGITAL LOADING
+   MERAH • ORANYE • KUNING • CREAM • HITAM
+====================================================== */
+
+#loading-screen {
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255,170,0,.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            #fff8e8 0%,
+            #f4e4c5 48%,
+            #ead4ad 100%
+        );
+
+}
+
+
+/* Cahaya merah-oranye */
+
+#loading-screen::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-25%;
+
+    background:
+
+        radial-gradient(
+            circle at 25% 35%,
+            rgba(220,25,25,.22),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 75% 65%,
+            rgba(255,130,0,.24),
+            transparent 38%
+        );
+
+    filter:blur(35px);
+
+    animation:
+        panduLightGlow 5s ease-in-out infinite alternate;
+
+}
+
+
+/* Lingkaran cahaya */
+
+#loading-screen::after {
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    max-width:90vw;
+    max-height:90vw;
+
+    border-radius:50%;
+
+    border:
+        2px solid rgba(220,35,25,.20);
+
+    box-shadow:
+
+        0 0 25px rgba(255,120,0,.18),
+
+        0 0 70px rgba(255,180,0,.14),
+
+        inset 0 0 60px rgba(220,30,20,.08);
+
+    animation:
+        panduLightRing 5s ease-out infinite;
+
+}
+
+
+/* ======================================================
+   KOTAK LOADING
+====================================================== */
+
+#loading-screen .loader-content {
+
+    z-index:2;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.82),
+            rgba(255,244,220,.68)
+        );
+
+    border:
+        1px solid rgba(190,45,25,.12);
+
+    box-shadow:
+
+        0 18px 55px rgba(100,45,15,.15),
+
+        0 0 30px rgba(255,160,0,.10),
+
+        inset 0 0 30px rgba(255,255,255,.7);
+
+}
+
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+#loading-screen .loader-logo {
+
+    box-shadow:
+
+        0 0 0 5px rgba(255,255,255,.75),
+
+        0 0 20px rgba(220,40,25,.25),
+
+        0 0 45px rgba(255,140,0,.20);
+
+}
+
+
+/* ======================================================
+   JUDUL
+====================================================== */
+
+#loading-screen h2 {
+
+    color:#181818;
+
+    text-shadow:
+
+        0 1px 0 white,
+
+        0 0 10px rgba(255,150,0,.18);
+
+}
+
+
+/* Text */
+
+#loading-screen #loading-text {
+
+    color:#6b5744;
+
+}
+
+
+/* ======================================================
+   PROGRESS BAR
+====================================================== */
+
+#loading-screen .progress-bar {
+
+    background:
+
+        rgba(70,35,20,.10);
+
+}
+
+
+#loading-screen .progress {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #c91f1f,
+            #ed4b19,
+            #ff8c00,
+            #ffc400
+        );
+
+    box-shadow:
+
+        0 0 10px rgba(255,90,0,.45),
+
+        0 0 22px rgba(255,170,0,.28);
+
+}
+
+
+/* Persentase */
+
+#loading-screen #loading-percent {
+
+    color:#9d2c1f;
+
+}
+
+
+/* ======================================================
+   ANIMASI TEMA PANDU
+====================================================== */
+
+@keyframes panduLightGlow {
+
+    from {
+
+        transform:scale(1);
+
+        opacity:.55;
+
+    }
+
+    to {
+
+        transform:scale(1.13);
+
+        opacity:.9;
+
+    }
+
+}
+
+
+@keyframes panduLightRing {
+
+    0% {
+
+        transform:scale(.65);
+
+        opacity:0;
+
+    }
+
+    25% {
+
+        opacity:.55;
+
+    }
+
+    100% {
+
+        transform:scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ======================================================
+   ANIMASI LIGHT
+====================================================== */
+
+@keyframes loaderFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes loaderLogo {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* ======================================================
+   SAAT LOADING SELESAI
+====================================================== */
+
+#loading-screen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/* ======================================================
+   DARK MODE NORMAL
+   BUKAN SAKANADE
+====================================================== */
+
+body.dark-mode #loading-screen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #172330,
+            #0b1118
+        );
+
+}
+
+
+body.dark-mode #loading-screen .loader-content {
+
+    background:
+        rgba(25,38,50,.72);
+
+    box-shadow:
+        0 15px 60px rgba(0,0,0,.4),
+        inset 0 0 30px rgba(100,180,220,.04);
+
+}
+
+
+body.dark-mode #loading-screen h2 {
+
+    color: #dceeff;
+
+}
+
+
+body.dark-mode #loading-screen #loading-text,
+body.dark-mode #loading-screen #loading-percent {
+
+    color: #91afc3;
+
+}
+
+
+body.dark-mode #loading-screen .progress-bar {
+
+    background: rgba(255,255,255,.08);
+
+}
+
+
+/* ======================================================
+   SAKANADE LOADING
+====================================================== */
+
+body.sakanade-mode #loading-screen {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(0,255,255,.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at center,
+            #062a3b 0%,
+            #03131e 55%,
+            #01080d 100%
+        );
+
+}
+
+
+/* Cyan fog */
+
+body.sakanade-mode #loading-screen::before {
+
+    content: "";
+
+    position: absolute;
+    inset: -20%;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 30% 40%,
+            rgba(0,255,255,.18),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 70% 60%,
+            rgba(0,140,255,.18),
+            transparent 50%
+        );
+
+    filter: blur(30px);
+
+    animation:
+        sakanadeLoadingFog 5s ease-in-out infinite alternate;
+
+}
+
+
+/* Cyan ring */
+
+body.sakanade-mode #loading-screen::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    max-width: 90vw;
+    max-height: 90vw;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(80,255,255,.35);
+
+    box-shadow:
+
+        0 0 25px rgba(0,255,255,.25),
+        0 0 80px rgba(0,170,255,.18),
+        inset 0 0 60px rgba(0,220,255,.08);
+
+    animation:
+        sakanadeLoadingRing 4s ease-out infinite;
+
+}
+
+
+/* Content Sakanade */
+
+body.sakanade-mode #loading-screen .loader-content {
+
+    z-index: 2;
+
+    background:
+        rgba(0,20,30,.42);
+
+    border:
+        1px solid rgba(80,255,255,.18);
+
+    box-shadow:
+
+        0 0 30px rgba(0,255,255,.10),
+        0 0 80px rgba(0,130,255,.10),
+
+        inset 0 0 30px rgba(0,255,255,.05);
+
+    backdrop-filter: blur(14px);
+
+}
+
+
+/* Logo Sakanade */
+
+body.sakanade-mode #loading-screen .loader-logo {
+
+    box-shadow:
+
+        0 0 0 5px rgba(80,255,255,.12),
+        0 0 25px rgba(0,255,255,.45),
+        0 0 65px rgba(0,150,255,.25);
+
+}
+
+
+/* Text Sakanade */
+
+body.sakanade-mode #loading-screen h2 {
+
+    color: #d9ffff;
+
+    text-shadow:
+        0 0 10px rgba(0,255,255,.45);
+
+}
+
+
+body.sakanade-mode #loading-screen #loading-text {
+
+    color: #8deeff;
+
+}
+
+
+body.sakanade-mode #loading-screen #loading-percent {
+
+    color: #b9ffff;
+
+}
+
+
+/* Progress Sakanade */
+
+body.sakanade-mode #loading-screen .progress-bar {
+
+    background:
+        rgba(0,255,255,.08);
+
+    box-shadow:
+        inset 0 0 10px rgba(0,255,255,.08);
+
+}
+
+
+body.sakanade-mode #loading-screen .progress {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #00aaff,
+            #00ffff,
+            #8fffff
+        );
+
+    box-shadow:
+
+        0 0 10px rgba(0,255,255,.7),
+        0 0 25px rgba(0,180,255,.45);
+
+}
+/* ======================================================
+   SAKANADE LIGHT LOADING
+   AKTIF SAAT SAKANADE + LIGHT MODE
+====================================================== */
+
+body.sakanade-mode:not(.dark-mode) #loading-screen {
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,255,255,.14),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at center,
+            #fffaf2 0%,
+            #f7ead8 55%,
+            #ead9c5 100%
+        ) !important;
+
+}
+
+
+/* Fog cyan + warm light */
+
+body.sakanade-mode:not(.dark-mode) #loading-screen::before {
+
+    background:
+
+        radial-gradient(
+            ellipse at 25% 35%,
+            rgba(0,230,255,.16),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            ellipse at 75% 65%,
+            rgba(255,145,35,.14),
+            transparent 50%
+        ) !important;
+
+    filter:blur(30px);
+
+}
+
+
+/* Ring */
+
+body.sakanade-mode:not(.dark-mode) #loading-screen::after {
+
+    border-color:
+        rgba(0,190,220,.30) !important;
+
+    box-shadow:
+
+        0 0 25px rgba(0,220,240,.22),
+        0 0 70px rgba(255,145,40,.15),
+        inset 0 0 55px rgba(0,220,255,.08) !important;
+
+}
+
+
+/* Kotak */
+
+body.sakanade-mode:not(.dark-mode)
+#loading-screen .loader-content {
+
+    background:
+        rgba(255,250,240,.72) !important;
+
+    border:
+        1px solid rgba(0,180,200,.20) !important;
+
+    box-shadow:
+
+        0 0 30px rgba(0,220,240,.12),
+        0 0 70px rgba(255,145,40,.10),
+        inset 0 0 30px rgba(255,255,255,.55) !important;
+
+    backdrop-filter:blur(14px);
+
+    color:#292323 !important;
+
+}
+
+
+/* Judul */
+
+body.sakanade-mode:not(.dark-mode)
+#loading-screen h2 {
+
+    color:#a51f29 !important;
+
+}
+
+
+/* Teks */
+
+body.sakanade-mode:not(.dark-mode)
+#loading-screen #loading-text {
+
+    color:#53666b !important;
+
+}
+
+
+/* Persentase */
+
+body.sakanade-mode:not(.dark-mode)
+#loading-screen #loading-percent {
+
+    color:#a51f29 !important;
+
+}
+
+
+/* Progress */
+
+body.sakanade-mode:not(.dark-mode)
+#loading-screen .progress {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d9232e,
+            #ff6b1a,
+            #ffad1f,
+            #00d9ee
+        ) !important;
+
+    box-shadow:
+        0 0 10px rgba(255,90,30,.45),
+        0 0 25px rgba(0,210,230,.30);
+
+}
+
+/* ======================================================
+   ANIMASI SAKANADE
+   TIDAK ADA GETAR
+====================================================== */
+
+@keyframes sakanadeLoadingFog {
+
+    from {
+        transform: scale(1);
+        opacity: .65;
+    }
+
+    to {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes sakanadeLoadingRing {
+
+    0% {
+
+        transform: scale(.55);
+
+        opacity: 0;
+
+    }
+
+    25% {
+
+        opacity: .55;
+
+    }
+
+    100% {
+
+        transform: scale(1.35);
+
+        opacity: 0;
+
+    }
+
+}
+
+/* ==========================================
+   PAKSA LOADING SCREEN SELALU RAPI DI TENGAH
+========================================== */
+
+
+
+
+/* Kotak loading */
+#loading-screen .loader-content {
+    position: relative !important;
+    
+    width: min(390px, 88vw) !important;
+    max-width: 390px !important;
+    
+    min-height: 0 !important;
+    
+    margin: 0 !important;
+    padding: 28px 22px !important;
+    
+    box-sizing: border-box !important;
+    
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    text-align: center !important;
+    
+    transform: none !important;
+}
+
+/* Foto */
+#loading-screen .loader-logo {
+    display: block !important;
+    
+    width: min(150px, 42vw) !important;
+    height: auto !important;
+    
+    margin: 0 auto 18px !important;
+    
+    object-fit: contain !important;
+}
+
+/* Judul */
+#loading-screen h2 {
+    margin: 0 0 10px !important;
+    
+    text-align: center !important;
+}
+
+/* Teks */
+#loading-screen #loading-text {
+    margin: 0 0 18px !important;
+    
+    text-align: center !important;
+}
+
+/* Progress bar */
+#loading-screen .progress-bar {
+    width: 100% !important;
+    height: 12px !important;
+    
+    margin: 0 auto 10px !important;
+    
+    overflow: hidden !important;
+}
+
+/* Persentase */
+#loading-screen #loading-percent {
+    display: block !important;
+    
+    width: 100% !important;
+    
+    text-align: center !important;
+}
+
+/* HP */
+@media (max-width: 600px) {
+    
+    #loading-screen {
+        padding: 16px !important;
+    }
+    
+    #loading-screen .loader-content {
+        width: 88vw !important;
+        max-width: 360px !important;
+        
+        padding: 24px 18px !important;
+    }
+    
+    #loading-screen .loader-logo {
+        width: 125px !important;
+        margin-bottom: 14px !important;
+    }
+    
+}
+
+/* HP kecil */
+@media (max-width: 380px) {
+    
+    #loading-screen .loader-content {
+        width: 90vw !important;
+        padding: 20px 15px !important;
+    }
+    
+    #loading-screen .loader-logo {
+        width: 105px !important;
+    }
+    
+}
+
+#loading-screen .loader-content {
+    border-radius: 18px !important;
+}
+
